@@ -1,0 +1,22 @@
+{
+  "name": "ordinalfabetix",
+  "version": "1.0.0",
+  "description": "Client for foodoso sdk",
+  "main": "index.js",
+  "repository": "https://github.com/foodoso/ordinalfabetix.git",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "build": "tsc"
+  },
+  "exports": {
+    "./": "dist/"
+  },
+  "dependencies": {
+    "@fazland/atlante": "alekitto/atlante#7f80459d4fde586d6a57052a0100d035fe7187a8"
+  },
+  "devDependencies": {
+    "@types/node": "^13.7.2",
+    "typescript": "^3.7.5"
+  }
+}

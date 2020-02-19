@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "declaration": true,
+    "declarationDir": "dist",
+    "moduleResolution": "node",
+    "lib": [ "esnext.asynciterable", "dom" ],
+    "module": "es2015",
+    "target": "es2015",
+    "sourceMap": true,
+    "typeRoots": [
+      "node_modules/@fazland",
+      "node_modules/@types"
+    ]
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
