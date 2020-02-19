@@ -1,5 +1,5 @@
 {
-  "name": "ordinalfabetix",
+  "name": "@foodoso/ordinalfabetix",
   "version": "1.0.0",
   "description": "Client for foodoso sdk",
   "main": "index.js",
