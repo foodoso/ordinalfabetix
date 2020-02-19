@@ -1,5 +1,6 @@
 /// <reference types="atlante" />
 import ClientInterface from '@fazland/atlante/lib/Http/ClientInterface';
+import Response from '@fazland/atlante/lib/Requester/Response';
 import { Urn } from './Urn';
 export declare abstract class AbstractList<T = any, C extends new () => AbstractList = any> {
     static readonly LOCATION: any;
@@ -31,7 +32,7 @@ export declare abstract class AbstractList<T = any, C extends new () => Abstract
      * Cycle on next page.
      */
     next(): AsyncIterableIterator<T>;
-    private _generateFromResponse;
+    protected _generateFromResponse(response: Response): IterableIterator<[string, T]>;
     /**
      * Creates a summary object from a response object.
      */

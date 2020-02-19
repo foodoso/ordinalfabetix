@@ -100,7 +100,7 @@ export abstract class AbstractList<T = any, C extends new() => AbstractList = an
         }
     }
 
-    private * _generateFromResponse(response: Response): IterableIterator<[string, T]> {
+    protected * _generateFromResponse(response: Response): IterableIterator<[string, T]> {
         this._totalCount = ~~response.headers.get('X-Total-Count');
         this._continuationToken = response.headers.get('X-Continuation-Token') as string;
 
