@@ -13,7 +13,7 @@
     "./": "dist/"
   },
   "dependencies": {
-    "@fazland/atlante": "alekitto/atlante#7f80459d4fde586d6a57052a0100d035fe7187a8"
+    "@fazland/atlante": "alekitto/atlante#908cfdace9334da0007b0a0ce69cc0773c4a43f5"
   },
   "devDependencies": {
     "@types/node": "^13.7.2",

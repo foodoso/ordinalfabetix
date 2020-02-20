@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@fazland/atlante@alekitto/atlante#7f80459d4fde586d6a57052a0100d035fe7187a8":
+"@fazland/atlante@alekitto/atlante#bf93cb95f3e2bd91447ac721782bdc80a4432a1d":
   version "1.0.0"
-  resolved "https://codeload.github.com/alekitto/atlante/tar.gz/7f80459d4fde586d6a57052a0100d035fe7187a8"
+  resolved "https://codeload.github.com/alekitto/atlante/tar.gz/bf93cb95f3e2bd91447ac721782bdc80a4432a1d"
   dependencies:
     "@jymfony/util" "^0.1.0-alpha.18"
 
