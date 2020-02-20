@@ -19,8 +19,8 @@ export class Client extends BaseClient {
         ]);
         this._authenticator = authenticator;
     }
-    logout() {
-        return this._authenticator.logout();
+    logout(state) {
+        return this._authenticator.logout(state);
     }
 }
 //# sourceMappingURL=Client.js.map

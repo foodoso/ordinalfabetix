@@ -35,7 +35,7 @@ export class Client extends BaseClient {
         this._authenticator = authenticator;
     }
 
-    logout(): Promise<void> {
-        return this._authenticator.logout();
+    logout(state?: string): Promise<void> {
+        return this._authenticator.logout(state);
     }
 }

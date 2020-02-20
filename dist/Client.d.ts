@@ -13,6 +13,6 @@ interface ClientConfiguration {
 export declare class Client extends BaseClient {
     protected _authenticator: CodeFlowAuthenticator;
     constructor(config: ClientConfiguration, ...decorators: DecoratorInterface[]);
-    logout(): Promise<void>;
+    logout(state?: string): Promise<void>;
 }
 export {};
