@@ -4,7 +4,7 @@
   "description": "Client for foodoso sdk",
   "main": "index.js",
   "repository": "https://github.com/foodoso/ordinalfabetix.git",
-  "license": "UNLICENSED",
+  "license": "996.ICU",
   "private": true,
   "scripts": {
     "build": "tsc"
