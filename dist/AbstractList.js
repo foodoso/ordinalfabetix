@@ -90,7 +90,10 @@ export class AbstractList {
      */
     next() {
         return __asyncGenerator(this, arguments, function* next_1() {
-            const filters = Object.assign(Object.assign({}, this._filters), { continue: String(this._continuationToken) });
+            const filters = Object.assign({}, this._filters);
+            if (!!this._continuationToken) {
+                filters['continue'] = String(this._continuationToken);
+            }
             const url = new URL(this.constructor.LOCATION, 'http://localhost');
             for (const [key, value] of Object.entries(filters)) {
                 if (undefined === value || null === value) {
