@@ -6,7 +6,8 @@ import WebRequester from "@fazland/atlante/lib/Requester/WebRequester";
 export class Client extends BaseClient {
     constructor(config, ...decorators) {
         const requester = config.requester || new WebRequester();
-        const authenticator = new CodeFlowAuthenticator(requester, new WebLocalStorage(), {
+        const storage = config.token_storage || new WebLocalStorage();
+        const authenticator = new CodeFlowAuthenticator(requester, storage, {
             server_url: config.login_server_url,
             client_id: config.client_id,
             client_secret: config.client_secret,
