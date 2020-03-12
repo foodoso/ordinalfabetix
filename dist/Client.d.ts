@@ -11,6 +11,7 @@ interface ClientConfiguration {
     client_id: string;
     client_secret: string;
     openid_scopes?: string[];
+    post_logout_redirect_uri?: string;
 }
 export declare class Client extends BaseClient {
     protected _authenticator: CodeFlowAuthenticator;

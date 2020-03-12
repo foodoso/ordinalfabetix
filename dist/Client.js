@@ -7,11 +7,13 @@ export class Client extends BaseClient {
     constructor(config, ...decorators) {
         const requester = config.requester || new WebRequester();
         const storage = config.token_storage || new WebLocalStorage();
+        const post_logout_redirect_uri = new URL(config.post_logout_redirect_uri || '/', window.location.href).toString();
         const authenticator = new CodeFlowAuthenticator(requester, storage, {
             server_url: config.login_server_url,
             client_id: config.client_id,
             client_secret: config.client_secret,
             openid_scope: config.openid_scopes || ['profile', 'email', 'offline_access'],
+            post_logout_redirect_uri,
         });
         super(requester, [
             new BodyConverterDecorator(),
