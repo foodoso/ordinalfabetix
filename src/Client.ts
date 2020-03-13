@@ -23,7 +23,9 @@ export class Client extends BaseClient {
     constructor(config: ClientConfiguration, ...decorators: DecoratorInterface[]) {
         const requester = config.requester || new WebRequester();
         const storage = config.token_storage || new WebLocalStorage();
-        const post_logout_redirect_uri = new URL(config.post_logout_redirect_uri || '/', window.location.href).toString();
+
+        const baseUrl = typeof window === 'undefined' ? 'http://locahost' : window.location.href;
+        const post_logout_redirect_uri = new URL(config.post_logout_redirect_uri || '/', baseUrl).toString();
 
         const authenticator = new CodeFlowAuthenticator(requester, storage, {
             server_url: config.login_server_url,
