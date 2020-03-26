@@ -23,6 +23,7 @@ var __asyncGenerator = (this && this.__asyncGenerator) || function (thisArg, _ar
     function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
 };
 import ArrayUtils from '@fazland/atlante/lib/Utils/ArrayUtils';
+import { Urn } from './Urn';
 export class AbstractList {
     constructor() {
         /**
@@ -95,9 +96,12 @@ export class AbstractList {
                 filters['continue'] = String(this._continuationToken);
             }
             const url = new URL(this.constructor.LOCATION, 'http://localhost');
-            for (const [key, value] of Object.entries(filters)) {
+            for (let [key, value] of Object.entries(filters)) {
                 if (undefined === value || null === value) {
                     continue;
+                }
+                if (value instanceof Urn) {
+                    value = String(value);
                 }
                 url.searchParams.append(key, value);
             }

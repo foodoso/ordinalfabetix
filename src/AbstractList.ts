@@ -81,9 +81,13 @@ export abstract class AbstractList<T = any, C extends new() => AbstractList = an
         }
 
         const url = new URL((<typeof AbstractList>this.constructor).LOCATION, 'http://localhost');
-        for (const [ key, value ] of Object.entries(filters)) {
+        for (let [ key, value ] of Object.entries(filters)) {
             if (undefined === value || null === value) {
                 continue;
+            }
+
+            if (value instanceof Urn) {
+                value = String(value);
             }
 
             url.searchParams.append(key, value);
