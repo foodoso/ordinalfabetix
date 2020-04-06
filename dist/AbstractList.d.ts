@@ -2,6 +2,7 @@
 import ClientInterface from '@fazland/atlante/lib/Http/ClientInterface';
 import Response from '@fazland/atlante/lib/Requester/Response';
 import { Urn } from './Urn';
+import { WalkerInterface } from './query-language/WalkerInterface';
 export declare abstract class AbstractList<T = any, C extends new () => AbstractList = any> {
     static readonly LOCATION: any;
     /**
@@ -16,6 +17,8 @@ export declare abstract class AbstractList<T = any, C extends new () => Abstract
     protected _filters: Record<string, any>;
     protected _totalCount: number;
     protected _continuationToken: string;
+    protected _expressionWalker: WalkerInterface;
+    constructor();
     /**
      * Iterates on the list.
      */
@@ -24,6 +27,7 @@ export declare abstract class AbstractList<T = any, C extends new () => Abstract
      * Returns a copy of this object with max results set.
      */
     withMaxResults(maxResults?: number): AbstractList<T, C>;
+    setExpressionWalker(walker: WalkerInterface): this;
     /**
      * Gets the total count.
      */
