@@ -4,7 +4,11 @@
     "declaration": true,
     "declarationDir": "dist",
     "moduleResolution": "node",
-    "lib": [ "esnext.asynciterable", "dom" ],
+    "lib": [
+      "esnext.asynciterable",
+      "dom",
+      "es2019"
+    ],
     "module": "es2015",
     "target": "es2015",
     "sourceMap": true,

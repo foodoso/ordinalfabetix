@@ -24,12 +24,15 @@ var __asyncGenerator = (this && this.__asyncGenerator) || function (thisArg, _ar
 };
 import ArrayUtils from '@fazland/atlante/lib/Utils/ArrayUtils';
 import { Urn } from './Urn';
+import { NormalizerWalker } from './query-language/NormalizerWalker';
+import { ExpressionInterface } from './query-language/expression/ExpressionInterface';
 export class AbstractList {
     constructor() {
         /**
          * Already initialized summary objects collection.
          */
         this._collection = {};
+        this._expressionWalker = new NormalizerWalker;
     }
     /**
      * Iterates on the list.
@@ -80,6 +83,10 @@ export class AbstractList {
         obj._maxResults = maxResults;
         return obj;
     }
+    setExpressionWalker(walker) {
+        this._expressionWalker = walker;
+        return this;
+    }
     /**
      * Gets the total count.
      */
@@ -99,6 +106,9 @@ export class AbstractList {
             for (let [key, value] of Object.entries(filters)) {
                 if (undefined === value || null === value) {
                     continue;
+                }
+                if (value instanceof ExpressionInterface && !!this._expressionWalker) {
+                    value = this._expressionWalker.walk(value);
                 }
                 if (value instanceof Urn) {
                     value = String(value);

@@ -1,0 +1,1 @@
+{"version":3,"file":"Identifiable.js","sourceRoot":"","sources":["../src/Identifiable.ts"],"names":[],"mappings":"AAAA,MAAM,CAAC,OAAO,OAAgB,YAAY;IACtC,MAAM,CAAC,CAAC,MAAM,CAAC,WAAW,CAAC,CAAC,QAAQ;QAChC,OAAO,OAAO,MAAM,CAAC,cAAc,CAAC,QAAQ,CAAC,CAAC,aAAa,KAAK,UAAU,CAAC;IAC/E,CAAC;CAGJ"}
